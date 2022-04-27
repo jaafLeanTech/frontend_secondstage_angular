@@ -1,0 +1,21 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title style="font-weight: bold; font-size: medium;">{{ (titleDisplay.length > 40) ? (titleDisplay | slice:0:40)+'...' :  titleDisplay }}</mat-card-title>
+        <mat-card-subtitle style="font-weight: bold; font-size: small;">{{ 'Journal: ' + (journal) }}</mat-card-subtitle>
+        <button class="close" mat-button mat-dialog-title>Close</button>
+    </mat-card-header>
+    <img mat-card-image style="width: 100%; height: 100%; margin: auto" src="{{ journal == 'PLOS ONE' ? './assets/descarga.png' : './assets/not_found.png' }}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <p>
+            {{ (abstract[0] | slice:0:250)+'...' }}
+        </p>
+    </mat-card-content>
+
+    <mat-card-actions class="card_buttons">
+      <button mat-raised-button color="primary">Edit</button>
+      <button mat-raised-button color="accent">Show Abstract</button>
+      <button mat-raised-button color="warn">Cancel</button>
+    </mat-card-actions>
+
+</mat-card>
+
